@@ -206,48 +206,48 @@
              <div class="row">
                  <div class="col-6">
                    <label for="">Order No</label>
-                   <input type="text" class="form-control" id="" required>
+                   <input type="text" class="form-control" id="txtOrderNo" required>
                  </div>
                  <div class="col-6">
                    <label for="">Order Type</label>
-                   <select class="form-select" aria-label="Default select example">
+                   <select id="txtOrderType" class="form-select" aria-label="Default select example">
                      <option selected></option>
-                     <option value="1">Started</option>
-                     <option value="2">New</option>
-                     <option value="3">Cancelled</option>
+                     <option value="ASNIDO">ASN Inbound </option>
+                     <option value="New1">New</option>
+                     <option value="Cancelled1">Cancelled</option>
                    </select>
                  </div>
                  <div class="col-6">
                    <label for="">Scheduled Reception</label>
-                   <input type="datetime" class="form-control" id="" required>
+                   <input id="txtScheduledReception" type="datetime" class="form-control" required>
                  </div>
                  <div class="col-6">
                    <label for="">Supplier</label>
-                   <input type="text" class="form-control" id="" required>
+                   <input type="text" class="form-control" id="txtSupplier" required>
                  </div>
                  <div class="col-6">
                    <label for="">Order Status</label>
-                   <select class="form-select" aria-label="Default select example">
+                   <select id="txtOrderStatus" class="form-select" aria-label="Default select example">
                      <option selected></option>
-                     <option value="1">Started</option>
-                     <option value="2">New</option>
-                     <option value="3">Cancelled</option>
+                     <option value="Started2">Started</option>
+                     <option value="New2">New</option>
+                     <option value="Cancelled2">Cancelled</option>
                    </select>
                  </div>
                  <div class="col-6">
                    <label for="">Priority</label>
-                   <select class="form-select" aria-label="Default select example">
+                   <select id="txtPriority" class="form-select" aria-label="Default select example">
                      <option selected></option>
-                     <option value="1">Started</option>
-                     <option value="2">New</option>
-                     <option value="3">Cancelled</option>
+                     <option value="Started3">Started</option>
+                     <option value="New">New3</option>
+                     <option value="Cancelled3">Cancelled</option>
                    </select>
                  </div>
              </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" id="BtSaveChange" class="btn btn-primary" onclick = "BtSaveChange_onclick">Save changes</button>
       </div>
         </form>
     </div>
