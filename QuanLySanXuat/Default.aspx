@@ -21,7 +21,7 @@
         <div class="trang1">
             <div class="tab1">
                 <d>Filter Orders:</d>  <%--Lọc đơn hàng--%>
-                <button type="button" class="btn btn-secondary">Today</button><%-- hôm nay--%>
+                <button type="button" class="btn btn-secondary">Today  </button><%-- hôm  nay--%>
                 <button type="button" class="btn btn-secondary">Three Days</button> <%--3 ngày--%>
                 <button type="button" class="btn btn-secondary">Reset</button> <%--Cài đặt lại--%>
             </div>
