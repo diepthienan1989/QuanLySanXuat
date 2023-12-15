@@ -202,7 +202,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <form action="/" method="post">
-                  <div class="modal-body">
+           <div class="modal-body">
              <div class="row">
                  <div class="col-6">
                    <label for="">Order No</label>
@@ -218,7 +218,7 @@
                    </select>
                  </div>
                  <div class="col-6">
-                   <label for="">Scheduled ReCeption</label>
+                   <label for="">Scheduled Reception</label>
                    <input type="datetime" class="form-control" id="" required>
                  </div>
                  <div class="col-6">
