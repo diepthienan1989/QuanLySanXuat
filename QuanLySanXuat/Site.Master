@@ -17,7 +17,7 @@
 
 </head>
 <style>
-    .container1 .body-content{
+    .container{
         margin-left : 0px;
         margin-right: 0px;
     }
