@@ -1,0 +1,315 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<style>
+    .border-left-0 {
+        border-right: none;
+    }
+</style>
+
+<main>
+    <div class="filter">
+        <div class="row">
+            <span class="text-nowrap w-auto col-1 d-flex align-items-center">Filter Oders:</span>
+            <div class="btn-group col-2" role="group">
+                <button class="btn text-nowrap btn-secondary" type="button" value="Today">Today</button>
+                <button class="btn text-nowrap btn-secondary" type="button" value="Three Days">Three Days</button>
+                <button class="btn text-nowrap btn-secondary" type="button" value="Reset">Reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <div class="row">
+            <div class="col-6">
+                <div class="float-start row">
+                    <span class="text-nowrap col-3 d-flex align-items-center">Profile:</span>
+                    <div class="dropdown col-2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 float-end">
+                <div class="d-flex justify-content-end flex-wrap-reverse">
+                    <button class="btn me-2 btn-outline-dark" disabled type="button">Release</button>
+                    <button class="btn me-2 btn-outline-dark" disabled type="button">Details</button>
+                    <button class="btn me-2 btn-outline-dark btn-add" type="button" data-toggle="modal" data-target="#NewModal">New</button>
+                    <button class="btn me-2 btn-outline-dark" disabled type="button">Edit</button>
+                    <button class="btn me-2 btn-outline-dark" disabled type="button">Cancel</button>
+                    <button class="btn me-2 btn-outline-dark" disabled type="button">Resources</button>
+                    <button class="btn me-2 btn-outline-dark" disabled type="button">
+                        <span class="">Icon export</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive mt-3">
+        <table class="table table-bordered table-vcenter table-hover">
+            <thead>
+                <tr class="border-top">
+                    <th class="w-1 "></th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Order Status</div>
+                            <div>
+                                <select class="form-control form-select">
+                                    <option value="">Not filtered</option>
+                                    <option value="">New</option>
+                                    <option value="">Started</option>
+                                    <option value="">Released</option>
+                                    <option value="">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Order No</div>
+                            <div>
+                                <input class="form-control form-text" type="text" placeholder="Not filtered" />
+                            </div>
+                        </div>
+                    </th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Order Type</div>
+                            <div>
+                                <select class="form-control form-select">
+                                    <option value="">All</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Supplier</div>
+                            <div>
+                                <input class="form-control form-text" type="text" placeholder="Not filtered" />
+                            </div>
+                        </div>
+                    </th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Scheduled Reception</div>
+                            <div>
+                                <input class="form-control form-text" type="datetime-local" placeholder="From" />
+                            </div>
+                            <div>
+                                <input class="form-control form-text" type="datetime-local" placeholder="To" />
+                            </div>
+                        </div>
+                    </th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Priority</div>
+                            <div>
+                                <input class="form-control form-text" type="text" placeholder="Not filtered" />
+                            </div>
+                        </div>
+                    </th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Completed Lines</div>
+                        </div>
+                    </th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Facility</div>
+                            <div>
+                                <input class="form-control form-text" type="text" placeholder="Not filtered" />
+                            </div>
+                        </div>
+                    </th>
+                    <th class="m-auto" style="vertical-align:top">
+                        <div class="d-flex flex-column">
+                            <div class="mb-2">Warehouse</div>
+                            <div>
+                                <input class="form-control form-text" type="text" placeholder="Not filtered" />
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tbl-data-tbody">
+                <!-- Các dòng dữ liệu sẽ được thêm vào đây -->
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<div class="modal" id="NewModal" tabindex="-1" role="dialog" aria-labelledby="NewModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="NewModalLabel">New Oder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="d-flex">
+                        <div class="mb-3 col-5 me-auto">
+                            <label for="" class="form-label text-nowrap">Oder No</label>
+                            <input type="text" class="form-control" id="txtOrderNo">
+                        </div>
+                        <div class="mb-3 col-5 me-auto">
+                            <label for="" class="form-label text-nowrap">Oder Type</label>
+                            <select class="form-select" id="txtOrderType">
+                                <option value="All">All</option>
+                                <option value="Type1">Type 1</option>
+                                <option value="Type2">Type 2</option>
+                                <option value="Type3">Type 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-flex flex-wrap">
+                        <div class="mb-3 col-5 me-auto">
+                            <label for="" class="form-label text-nowrap">Scheduled Reception</label>
+                            <input type="datetime-local" class="form-control" id="txtScheduledReception">
+                        </div>
+                        <div class="mb-3 col-5 me-auto">
+                            <label for="" class="form-label text-nowrap">Supplier</label>
+                            <input type="text" class="form-control" id="txtSupplier">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-flex flex-wrap">
+                        <div class="mb-3 col-5 me-auto">
+                            <label for="" class="form-label text-nowrap">Oder Status</label>
+                            <select class="form-select" id="txtOderStatus">
+                                <option value="New">New</option>
+                                <option value="Cancel">Cancel</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-5 me-auto">
+                            <label for="" class="form-label text-nowrap">Priority</label>
+                            <select class="form-select" id="txtPriority">
+                                <option value="1">1 - high</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSubmit">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let objOrder = {};
+
+    $(document).ready(function () {
+        loadData();
+    });
+
+    function loadData() {
+        $.ajax({
+            type: "POST",
+            url: window.location.origin + '/Home/LoadData',
+            success: function (data) {
+                var objs = JSON.parse(data);
+
+                let html_str = "";
+                for (i = 0; i < objs.length; i++) {
+                    html_str += renderItem({ item: objs[i] })
+                }
+                const tblbody = $("#tbl-data-tbody");
+                tblbody.html(html_str);
+            },
+            error: function (data) {
+
+            }
+        });
+    }
+
+    const renderItem = ({ item }) => {
+        let html = `<tr onclick="nextStep(''${item.OrderId}')">
+                        <td></td>
+                        <td>${item.OrderStatus}</td>
+                        <td>${item.OrderNo}</td>
+                        <td>${item.OrderType}</td>
+                        <td>${item.Supplier}</td>
+                        <td>${item.ScheduledReception}</td>
+                        <td>${item.Priority}</td>
+                        <td>${item.CompletedLines ? item.CompletedLines : ''}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>`;
+        return html;
+    }
+
+    function nextStep(OrderId) {
+
+    }
+
+
+    $("#btnSubmit").click(function () {
+        var orderId = create_UUID();
+        var orderNo = $('#txtOrderNo').val();
+        var orderType = $('#txtOrderType').val();
+        var scheduledReception = $('#txtScheduledReception').val();
+        var supplier = $('#txtSupplier').val();
+        var orderStatus = $('#txtOderStatus').val();
+        var priority = $('#txtPriority').val();
+
+        // Tạo đối tượng dữ liệu để gửi đi
+        var data = {
+            OrderId: orderId,
+            OrderNo: orderNo,
+            OrderType: orderType,
+            ScheduledReception: scheduledReception,
+            Supplier: supplier,
+            OrderStatus: orderStatus,
+            Priority: priority
+        };
+
+        objOrder = { ...data };
+        $.ajax({
+            type: "POST",
+            data: { order: objOrder },
+            url: window.location.origin + '/Home/AddOrder',
+            success: function (res) {
+                if (res == true) {
+                    toastr.success('Thành công thêm dữ liệu!');
+                    setTimeout(function () {
+                        window.location.href = '/Home';
+                    }, 2000);
+                } else {
+                    toastr.error('Thêm dữ liệu không thành công!');
+                }
+
+            },
+            error: function (data) {
+                toastr.warning('Có lỗi xảy ra trong quá trình gửi.')
+            }
+        });
+    });
+
+</script>
